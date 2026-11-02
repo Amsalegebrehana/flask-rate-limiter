@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-@app.route('/api/health-check', methods=['GET'])
+@app.route('/health', methods=['GET'])
 def health_check():
     return jsonify({"status": "healthy"}), 200
 
@@ -11,3 +11,7 @@ def health_check():
 def get_resource():
     return jsonify({"message": "Resource accessed successfully"}), 200
 
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
