@@ -32,7 +32,9 @@ class SlidingWindowRateLimiter:
 
         if len(self.clients[client]) >= self.max_requests:
             return False
-        # {"status": 429, "msg": "Rate limit reached"}
+      
         else:
             self.clients[client].append(curr_request_time)
             return  True
+
+
